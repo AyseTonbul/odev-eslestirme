@@ -10,12 +10,24 @@ const kartTemplate = `
     </div>
 `;
 
-const fotoNumaralari = [
-    10, 20, 30, 20,
-    10, 40, 40, 30
-];
+// const fotoNumaralari = [
+//     10, 20, 30, 20,
+//     10, 40, 40, 30
+// ];
 
-for (fotoNumara of fotoNumaralari) {
+function rastgeleResim(){
+    let dizi =[];
+    for( let i=0; i<4;i++){
+        dizi.push(Math.floor(Math.random()*100)+1)
+    }
+    
+    dizi.push(...dizi); 
+    return dizi;
+    }
+
+const resimNumaralari=rastgeleResim();
+
+for (fotoNumara of resimNumaralari) {
     const yenikart = document.createElement("div");
     yenikart.innerHTML = kartTemplate;
     yenikart.classList.add("kart");
