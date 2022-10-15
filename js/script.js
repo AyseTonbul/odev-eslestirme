@@ -26,6 +26,7 @@ for (fotoNumara of fotoNumaralari) {
     yenikart.addEventListener("click", kartTiklama);
 }
 
+let sayac= 0;
 function kartTiklama(olay) {
     //Tıklanan kartı seçilen olarak değişkene atayalım
     const secilenKart = olay.currentTarget;
@@ -75,6 +76,9 @@ function kartTiklama(olay) {
 
         acikKart.classList.remove("acik");
         secilenKart.classList.remove("acik");
+        let puan=document.querySelector("span")
+        sayac ++;
+        puan.textContent=sayac + " Adet kart eşleşti..!"
 
         setTimeout(() => {
             acikKart.removeEventListener("click", kartTiklama);
