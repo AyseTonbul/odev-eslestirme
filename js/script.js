@@ -84,7 +84,19 @@ function kartTiklama(olay) {
             acikKart.removeEventListener("click", kartTiklama);
             secilenKart.removeEventListener("click", kartTiklama);
         }, 1000);
+
+        if(sayac==4){
+          const img=document.createElement("img");
+          img.src="img/congrate.gif";
+          document.querySelector("body").appendChild(img);
+          setTimeout(() => {
+            img.remove();
+          },
+          5000);  
+        }
     } else {
+
+        
         //İki açık kartın görsel dosya adı birbirinden farklı, eşleşme yok, kartlar kapansın.
         setTimeout(() => {
             acikKart.classList.remove("acik");
